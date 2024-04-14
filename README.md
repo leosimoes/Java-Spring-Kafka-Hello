@@ -1,6 +1,8 @@
 # Spring Kafka - Hello
 Project in Java with Spring, Gradle and Kafka to create a topic producing and consuming application.
 
+![Img-04-UML-Classes](images/Img-04-UML-Classes.png)
+
 
 ## Steps
 The steps of project implementation:
@@ -52,6 +54,22 @@ services:
 ```properties
 spring.kafka.bootstrap-servers=localhost:29092
 ```
+
+3. Create `HelloProducerService` class:
+- annotated with `@Service`;
+- with a `KafkaTemplate<String, String> kafkaTemplate` attribute;
+- with a constructor with an argument;
+- with a `void sendMessage(String message)` method;
+
+4. Create `HelloConsumerService` class:
+- annotated with `@Service`;
+- with a method `@KafkaListener(topics = "hello-topic", groupId = "group-1") public void receiveMessage(String message)`;
+
+5. Create `HelloController` class:
+- annotated with `@RestController` and `@RequestMapping("/kafka")`;
+- with a `HelloProducerService service` attribute;
+- with a constructor with one argument and annotated with `@Autowired`;
+- with a method `@GetMapping("/hello/{name}") public String hello(@PathVariable("name") String name)`;
 
 
 ## References
