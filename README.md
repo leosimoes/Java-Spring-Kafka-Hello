@@ -71,6 +71,10 @@ spring.kafka.bootstrap-servers=localhost:29092
 - with a constructor with one argument and annotated with `@Autowired`;
 - with a method `@GetMapping("/hello/{name}") public String hello(@PathVariable("name") String name)`;
 
+6. Test application with POSTMAN `localhost:8080/kafka/hello/leo`.
+
+![Img-05-Postman-Hello-leo](images/Img-05-Postman-Hello-leo.png)
+
 
 ## References
 Spring for Apache Kafka - Quick Tour:
