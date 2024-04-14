@@ -47,6 +47,12 @@ services:
 
 ![Img-03-DockerDesktop](images/Img-03-DockerDesktop.png)
 
+- Alterar `application.propeties` para encontrar o Kafka:
+
+```properties
+spring.kafka.bootstrap-servers=localhost:29092
+```
+
 
 ## Referências
 Spring for Apache Kafka - Quick Tour:
